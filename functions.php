@@ -11,3 +11,34 @@ function valid_phone_number($phone)
 
     return preg_match($t, $phone);
 }
+
+/**
+ * zrwaca numer telefonu gdy jest poprawny
+ */
+function valid_phone_number($phone)
+{
+    $phone = str_replace([' ', '-'], '', $phone);
+    if (preg_match('/[0-9]{9}/', $phone)) {
+        return $phone;
+    } else {
+        return 0;
+    }
+}
+
+/**
+ * zrwaca mail gdy jest poprawny
+ */
+function valid_mail($mail)
+{
+    if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        return $mail;
+    } else {
+        return 0;
+    }
+
+}
+
+function save_name($name)
+{
+    return str_replace([' ', '-', '<', '>', '/', '0'], '', $name);
+}
