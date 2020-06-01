@@ -42,3 +42,12 @@ function save_name($name)
 {
     return str_replace([' ', '-', '<', '>', '/', '0'], '', $name);
 }
+
+
+
+$currentTime = (new DateTime('now'));
+$startTime = new DateTime('10:50');
+$endTime = (new DateTime('21:30'));
+
+// if (1 === 0):
+if ($currentTime < $startTime || $currentTime > $endTime):
